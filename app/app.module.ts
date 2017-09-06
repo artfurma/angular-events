@@ -9,7 +9,8 @@ import {
     CreateEventComponent,
     EventRouteActivatorService,
     EventsListResolverService,
-    CreateSessionComponent
+    CreateSessionComponent,
+    DurationPipe
 } from './events/index'
 import {EventsAppComponent} from "./events-app.component";
 import {NavbarComponent} from "./nav/navbar.component";
@@ -38,7 +39,8 @@ import {CollapsableWellComponent} from "./common/collapsable-well.component";
         CreateSessionComponent,
         SessionListComponent,
         CollapsableWellComponent,
-        Error404Component
+        Error404Component,
+        DurationPipe
     ],
     bootstrap: [EventsAppComponent],
     providers: [
