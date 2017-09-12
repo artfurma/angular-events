@@ -14,13 +14,15 @@ import {
 } from './events/index'
 import {EventsAppComponent} from "./events-app.component";
 import {NavbarComponent} from "./nav/navbar.component";
-import {ToastrService} from "./common/toastr.service";
+import {Toastr, TOASTR_TOKEN} from "./common/toastr.service";
 import {appRoutes} from "./routes";
 import {Error404Component} from "./errors/404.component";
 import {AuthService} from "./user/auth.service";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SessionListComponent} from "./events/event-details/session-list.component";
 import {CollapsableWellComponent} from "./common/collapsable-well.component";
+
+declare let toastr: Toastr;
 
 @NgModule({
     imports: [
@@ -45,7 +47,7 @@ import {CollapsableWellComponent} from "./common/collapsable-well.component";
     bootstrap: [EventsAppComponent],
     providers: [
         EventService,
-        ToastrService,
+        {provide: TOASTR_TOKEN, useValue: toastr},
         EventRouteActivatorService,
         EventsListResolverService,
         {provide: 'canDeactivateCreateEvent', useValue: checkDirtyState},

@@ -10,8 +10,8 @@ import {restrictedWords} from "../shared/restricted-words.validator";
 })
 export class CreateSessionComponent implements OnInit {
 
-    @Output() saveNewSession: EventEmitter = new EventEmitter();
-    @Output() cancelAddSession: EventEmitter = new EventEmitter();
+    @Output() saveNewSession: EventEmitter<any> = new EventEmitter();
+    @Output() cancelAddSession: EventEmitter<any> = new EventEmitter();
 
     newSessionForm: FormGroup;
     name: FormControl;
