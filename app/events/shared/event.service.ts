@@ -2,6 +2,7 @@ import {IEvent, ISession} from "./event.model";
 import {EventEmitter, Injectable} from "@angular/core";
 import {Subject} from "rxjs/Subject";
 import {Observable} from "rxjs/Observable";
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class EventService {
@@ -36,7 +37,7 @@ export class EventService {
         EVENTS.forEach(event => {
             let matchingSessions = event.sessions.filter(session => session.name.toLocaleLowerCase().indexOf(term) > -1);
             matchingSessions = matchingSessions.map((session: any) => {
-                session.eventIf = event.id;
+                session.eventId = event.id;
                 return session;
             });
 
