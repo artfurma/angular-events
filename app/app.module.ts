@@ -12,7 +12,8 @@ import {
     CreateSessionComponent,
     DurationPipe,
     UpvoteComponent,
-    VoterService
+    VoterService,
+    ValidateLocationDirective
 } from './events/index'
 import {
     JQ_TOKEN,
@@ -54,6 +55,7 @@ declare let jQuery: Object;
         UpvoteComponent,
         Error404Component,
         ModalTriggerDirective,
+        ValidateLocationDirective,
         DurationPipe
     ],
     bootstrap: [EventsAppComponent],
