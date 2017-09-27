@@ -10,7 +10,8 @@ import {
     EventRouteActivatorService,
     EventsListResolverService,
     CreateSessionComponent,
-    DurationPipe
+    DurationPipe,
+    UpvoteComponent
 } from './events/index'
 import {
     JQ_TOKEN,
@@ -49,6 +50,7 @@ declare let jQuery: Object;
         SessionListComponent,
         CollapsableWellComponent,
         SimpleModalComponent,
+        UpvoteComponent,
         Error404Component,
         ModalTriggerDirective,
         DurationPipe
