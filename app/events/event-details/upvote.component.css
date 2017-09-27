@@ -24,6 +24,10 @@
 }
 
 .voting-count {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     margin-left: -11px;
     margin-top: 1px;
     font-weight: bold;

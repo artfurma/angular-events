@@ -11,7 +11,8 @@ import {
     EventsListResolverService,
     CreateSessionComponent,
     DurationPipe,
-    UpvoteComponent
+    UpvoteComponent,
+    VoterService
 } from './events/index'
 import {
     JQ_TOKEN,
@@ -63,7 +64,8 @@ declare let jQuery: Object;
         EventRouteActivatorService,
         EventsListResolverService,
         {provide: 'canDeactivateCreateEvent', useValue: checkDirtyState},
-        AuthService
+        AuthService,
+        VoterService
     ]
 })
 export class AppModule {

@@ -1,7 +1,6 @@
 import {Component, OnInit, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
-    moduleId: module.id,
     selector: 'upvote',
     templateUrl: 'app/events/event-details/upvote.component.html',
     styleUrls: ['app/events/event-details/upvote.component.css']
@@ -10,8 +9,15 @@ import {Component, OnInit, EventEmitter, Input, Output} from '@angular/core';
 export class UpvoteComponent implements OnInit {
 
     @Input() count: number;
-    @Input() voted: boolean;
     @Output() vote = new EventEmitter();
+
+    @Input()
+    set voted(val) {
+        this.iconColor = val ? 'red' : 'white';
+    }
+
+
+    iconColor: string;
 
     constructor() {
     }
