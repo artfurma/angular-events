@@ -7,13 +7,13 @@ import {
     EventService,
     EventDetailsComponent,
     CreateEventComponent,
-    EventRouteActivatorService,
     EventsListResolverService,
     CreateSessionComponent,
     DurationPipe,
     UpvoteComponent,
     VoterService,
-    ValidateLocationDirective
+    ValidateLocationDirective,
+    EventResolverService
 } from './events/index'
 import {
     JQ_TOKEN,
@@ -65,8 +65,8 @@ declare let jQuery: Object;
         EventService,
         {provide: TOASTR_TOKEN, useValue: toastr},
         {provide: JQ_TOKEN, useValue: jQuery},
-        EventRouteActivatorService,
         EventsListResolverService,
+        EventResolverService,
         {provide: 'canDeactivateCreateEvent', useValue: checkDirtyState},
         AuthService,
         VoterService

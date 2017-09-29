@@ -30,8 +30,9 @@ export class ProfileComponent implements OnInit {
 
     saveProfile(formValues): void {
         if (this.profileForm.valid) {
-            this._authService.updateCurrentUser(formValues.firstName, formValues.lastName);
-            this._toastr.success('Profile saved!');
+            this._authService.updateCurrentUser(formValues.firstName, formValues.lastName).subscribe(() => {
+                this._toastr.success('Profile saved!');
+            });
         }
     }
 
@@ -45,5 +46,11 @@ export class ProfileComponent implements OnInit {
 
     cancel(): void {
         this._router.navigate(['events']);
+    }
+
+    logout() {
+        this._authService.logout().subscribe(() => {
+            this._router.navigate(['/user/login']);
+        });
     }
 }

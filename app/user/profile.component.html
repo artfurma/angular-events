@@ -6,7 +6,8 @@
             <div class="form-group" [ngClass]="{'error': !validateFirstName()}">
                 <label for="firstName">First Name:</label>
                 <em *ngIf="!validateFirstName() && profileForm.controls.firstName.errors.required">Required</em>
-                <em *ngIf="!validateFirstName() && profileForm.controls.firstName.errors.pattern">Must start with a letter</em>
+                <em *ngIf="!validateFirstName() && profileForm.controls.firstName.errors.pattern">Must start with a
+                    letter</em>
                 <input formControlName="firstName" id="firstName" type="text" class="form-control"
                        placeholder="First Name..."/>
             </div>
@@ -19,6 +20,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Save</button>
             <button (click)="cancel()" type="button" class="btn btn-default">Cancel</button>
+            <button type="button" class="btn btn-warning" style="float: right" (click)="logout()">Logout</button>
         </form>
     </div>
 </div>
